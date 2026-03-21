@@ -1,18 +1,18 @@
 # Generative-Project-Neural-Networks
 This project aims to build an image captioning model. It uses the CLIP model from OpenAI to extract rich visual features (embeddings) from images and a GPT-2 model to generate natural language captions based on those visual features. 
-```markdown
-# Image Captioning Project: Milestone 1 - Data Preparation
+
+Image Captioning Project: Milestone 1 - Data Preparation
 
 This project aims to build an image captioning model using CLIP for image embeddings and GPT-2 for text generation. This first milestone focuses on setting up the environment, downloading and preprocessing the COCO Captions dataset, generating CLIP image embeddings, and tokenizing captions using a GPT-2 tokenizer.
 
-## Table of Contents
+Table of Contents
 1.  [Setup and Dependencies](#1-setup-and-dependencies)
 2.  [Dataset Download and Preprocessing](#2-dataset-download-and-preprocessing)
 3.  [CLIP Image Embedding Pipeline](#3-clip-image-embedding-pipeline)
 4.  [GPT-2 Caption Tokenization](#4-gpt-2-caption-tokenization)
 5.  [Saving Processed Data](#5-saving-processed-data)
 
-## 1. Setup and Dependencies
+1. Setup and Dependencies
 This section initializes the environment, installs necessary libraries, and sets up PyTorch, Hugging Face Transformers (CLIP, GPT-2), and other supporting libraries. It also defines constants for reproducibility and data handling.
 
 **Key Actions:**
@@ -22,7 +22,7 @@ This section initializes the environment, installs necessary libraries, and sets
 -   Setting `DEVICE` ('cuda' or 'cpu'), `SEED` (42), `SUBSET_SIZE` (5000), `MAX_CAPTION_LEN` (64 tokens).
 -   Creating a data directory (`/content/drive/MyDrive/image-captioning/data`).
 
-## 2. Dataset Download and Preprocessing
+2. Dataset Download and Preprocessing
 This part handles downloading the COCO 2017 training images and captions, and then samples a subset of the data. It pairs image paths with their corresponding captions.
 
 **Key Actions:**
@@ -32,7 +32,7 @@ This part handles downloading the COCO 2017 training images and captions, and th
 -   Skipping images with missing files.
 -   Displaying a few example image-caption pairs.
 
-## 3. CLIP Image Embedding Pipeline
+3. CLIP Image Embedding Pipeline
 This section loads a pre-trained CLIP model and uses it to generate 512-dimensional embeddings for all sampled images. These embeddings capture the visual features of the images.
 
 **Key Actions:**
@@ -42,7 +42,7 @@ This section loads a pre-trained CLIP model and uses it to generate 512-dimensio
 -   Performing sanity checks on embedding similarity (image vs. itself, image vs. different image).
 -   Visualizing similarity search results: finding and displaying images most similar to a query image based on their CLIP embeddings.
 
-## 4. GPT-2 Caption Tokenization
+4. GPT-2 Caption Tokenization
 This step prepares the textual captions for the GPT-2 model by tokenizing them and adding special tokens for sequence handling.
 
 **Key Actions:**
@@ -52,7 +52,7 @@ This step prepares the textual captions for the GPT-2 model by tokenizing them a
 -   Generating `input_ids` and `attention_masks` for each caption.
 -   Performing sanity checks on tokenization, including decoding examples and analyzing caption length distribution.
 
-## 5. Saving Processed Data
+5. Saving Processed Data
 Finally, all the processed data (image embeddings, tokenized captions, tokenizer, and metadata) are bundled and saved to Google Drive for use in subsequent milestones.
 
 **Key Actions:**
